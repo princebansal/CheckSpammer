@@ -17,5 +17,7 @@ To find if the connecting host's IP address is spam:
 - For instance, if you want to ask sbl.spamhaus.org if 74.125.23.103 is a spammer, you would look up the hostname 103.23.125.74.sbl.spamhaus.org. (Note that despite the numeric component, this is a hostname ASCII string, not a dotted quad IP address.) If the DNS query succeeds (and, more specifically, if it returns the address 127.0.0.2), then the host is known to be a spammer. If the lookup fails—that is, it throws an UnknownHostException—it isn’t.
 
 #Conclusion
+You have to be careful and be updated of changes to blackhole list policies and addresses. Commonly and purposely, blackhole servers are frequent targets of DDOS and other attacks, so blackhole servers changes their address or stops responding. Also to be noted, different blackhole lists uses slightly different protocols. Some returns 127.0.0.1 instead of 127.0.0.2 as the DNS address of host.
+
 Though it is a very simple program, but it doesn't uses any web server or custom protocol. It is implemented using pure DNS lookup. You can use this program in your backend services for identifying false or spam connecting hosts.
 Please contribute to the repository to make it more advance.
